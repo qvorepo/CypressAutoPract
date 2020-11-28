@@ -1,0 +1,53 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome --headless",
+    "recordDashBoardChromeTest": "npm run test -- --record --key c44af9cc-0913-44a3-b309-3bb7bd2e47f9 --browser chrome --headless",
+    "recordDashBoardEdgeTest": "npm run test -- --record --key c44af9cc-0913-44a3-b309-3bb7bd2e47f9 --browser edge --headless",
+    "reporterTest": "npm run test -- --record --key c44af9cc-0913-44a3-b309-3bb7bd2e47f9 --reporter mochawesome",
+    "GreenKartTest": "npm run test -- --spec \"cypress/integration/GreenKart/*\"",
+    "sanitytest:mochawesomereport": "npx cypress run -r mochawesome -s \"cypress/integration/fileUploadExample.feature\"",
+    "test:allurereport": "npx cypress run --config video=false --browser chrome --headed --reporter mocha-allure-reporter -s \"cypress/integration/fileUploadExample.feature,cypress/integration/loginOrangehrm_SignIn.feature,cypress/integration/recruitement_orangehrm_resume_upload.feature\"",
+    "errorCountSuite": "npx cypress run --reporter mocha-allure-reporter --config video=false --spec \"cypress/integration/Error_combineLogFiles.js,cypress/integration/Error_getErrorCountsAndWriteToExcel.js\"",
+    "generatereport": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "sqliteselect": "node cypress/db/sqlite_select.js",
+    "sqliteinsert": "node cypress/db/sqlite_insert.js",
+    "cypress:report": "node config.js"
+  },
+  "author": "QuangVo",
+  "license": "ISC",
+  "devDependencies": {
+    "allure-commandline": "^2.13.0",
+    "browserstack-cypress-cli": "^1.5.1",
+    "cypress": "^6.0.0",
+    "cypress-cucumber-preprocessor": "^3.0.0",
+    "cypress-file-upload": "^4.1.1",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^1.6.0",
+    "ls": "^0.2.1",
+    "mocha": "^8.1.3",
+    "mocha-allure-reporter": "^1.4.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0",
+    "rimraf": "^3.0.2",
+    "yargs": "^16.1.0"
+  },
+  "dependencies": {
+    "copy-dir": "^1.3.0",
+    "cypress-downloadfile": "^1.2.0",
+    "excel4node": "^1.7.2",
+    "g": "^2.0.1",
+    "node-xlsx": "^0.15.0",
+    "read-excel-file": "^4.0.7",
+    "sqlite3": "^5.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+   "chromeWebSecurity": false,
+  "defaultCommandTimeout": 15000,
+  "pageLoadTimeout": 30000,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "toConsole": true
+  },
+
+  "retries" : {
+    "runMode": 1
+  },
+  "projectId": "29obbw"
+}
