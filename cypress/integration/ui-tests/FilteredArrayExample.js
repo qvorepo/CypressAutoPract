@@ -37,6 +37,14 @@ describe('Filtered Array Example', () => {
       return item.price >=3000;
     });
     cy.log(hasExpensiveItems);
+
+    const total=items.reduce((currTotal,item)=>{
+      return item.price + currTotal;
+    },0);
+    cy.log(total);
+
+    const auto=["Honda", "Toyota", "Chevrolet", "Hondai"];
+    cy.log(auto.includes("Hondai"));
          
 
     }) 
