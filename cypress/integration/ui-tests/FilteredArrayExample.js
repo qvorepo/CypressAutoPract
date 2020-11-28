@@ -43,8 +43,8 @@ describe('Filtered Array Example', () => {
     },0);
     cy.log(total);
 
-    const auto=["Honda", "Toyota", "Chevrolet", "Hondai"];
-    cy.log(auto.includes("Hondai"));
+    const auto=["Honda", "Toyota", "Chevrolet", "Hyndai"];
+    cy.log("The auto array includes Hyndai " + auto.includes("Hyndai"));
          
 
     }) 
