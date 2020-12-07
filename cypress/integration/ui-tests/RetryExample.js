@@ -2,8 +2,8 @@
 
 //const { has, hasIn } = require("cypress/types/lodash");
 
-describe('Filtered Array Example', () => {
-    it('Filtered Array Example', () => {
+describe('Retry Example', () => {
+    it('Retry Example', {retries:4},() => {
      const items=[
        {name: 'Bike', price: 100},
        {name: 'TV', price: 200},
@@ -16,7 +16,9 @@ describe('Filtered Array Example', () => {
      ];
 
      const filteredItems=items.filter((item)=>{
+      expect("a").not.equal("a");//This test will fail and retry.
        return item.price <=100;
+       
      });
 
     
