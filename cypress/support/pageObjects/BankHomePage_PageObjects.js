@@ -12,9 +12,9 @@ class HomePage
         cy.visit('http://www.way2automation.com/angularjs-protractor/banking');
     }
 
-    validateTitle()
+    validateTitle(title)
     {
-        cy.title().should('include', 'Protractor practice website - Banking App');
+        cy.title().should('include', title);
         
     }
 

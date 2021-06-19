@@ -26,7 +26,7 @@ const managerPage=new ManagerPage();
 
     And('I validate the page title', (title) => {
         //Protractor practice website - Banking App'
-        homePage.validateTitle(title);
+        homePage.validateTitle('Protractor practice website - Banking App');
         
     });//Then    
 
