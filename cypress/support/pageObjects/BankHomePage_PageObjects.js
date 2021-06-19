@@ -18,6 +18,12 @@ class HomePage
         
     }
 
+    validateTitle2(title)
+    {
+        cy.title().should('include', title);
+        
+    }
+
     getFirstNameInput()
     {
         return cy.get(inputFirstName);
