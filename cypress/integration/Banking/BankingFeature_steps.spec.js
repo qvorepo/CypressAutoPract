@@ -20,7 +20,7 @@ const managerPage=new ManagerPage();
 
     And(`I see {string} in the title`, (title) => {
         //Protractor practice website - Banking App'
-        homePage.validateTitle(title);
+        homePage.validateTitle('Protractor practice website - Banking App');
         
     });//Then
 
